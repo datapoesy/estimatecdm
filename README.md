@@ -1,2 +1,2 @@
 # estimatecdm
-## There is a fully functional model at:  https://shiny.curie.biz/estimatecdm/
+### A fully functional model is available at:  https://shiny.curie.biz/estimatecdm/
