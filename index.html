@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Welcome to Shiny Server!</title>
+  <style type="text/css">
+    body, html {
+      font-family: Helvetica, Arial, sans-serif;
+      background-color: #F5F5F5;
+      color: #114;
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    #titleBar {
+      height: 80px;
+      background-color: #3475b4;
+      overflow: hidden;
+      border-bottom: 1px solid #3475b3;
+      -moz-box-shadow:    0px 0px 10px 3px #BBC;
+      -webkit-box-shadow: 0px 0px 10px 3px #BBC;
+      box-shadow:         0px 0px 10px 3px #BBC;
+    }
+    #titleBar #container {
+      margin-top: 14px;
+    }
+    #titleBar h1 {
+      margin: 0 auto .5em auto;
+      padding: .2em;
+      color: #EEE;
+      text-align: center;
+    }
+    #intro {
+      background-color: #DDD;
+      margin: 1em 1em 0 1em;
+      padding: .75em;
+      text-align: center;
+      border: 1px solid #CCC;
+      font-size: 18px;
+    }
+    #intro p {
+      margin: .3em 0 .3em 0;
+    }
+    #outer-content {
+      max-width: 910px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    #content {
+      margin: 1em auto 1em auto;
+      float: left;
+    }
+    #main{
+      margin-right: 350px;
+      float: left;
+      line-height: 24px;
+    }
+
+    #shiny{
+      float: left;
+      width: 305px;
+      margin-left: -330px;
+      padding-left: 20px;
+      border-left: 1px solid #AAA;
+    }
+    #shiny iframe {
+      margin-top: 30px;
+    }
+    .caption{
+      font-size: 13px;
+    }
+    code {
+      background-color: #E5E5E5;
+      border: 1px solid #AAA;
+      -webkit-border-radius: 3px;
+      -khtml-border-radius: 3px; 
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+      padding: 0 .5em 0 .5em;
+    }
+  </style>
+</head>
+<body>
+  <div id="titleBar">
+    <div id="container">
+      <h1>Software Size Estimation from Conceptual Model</h1>
+    </div>
+  </div>
+  <div id="outer-content">
+    <div id="intro">
+      <p>This simple tool helps you estimate potential the size of a software product from its conceptual design model (CDM)</p>
+    </div>
+    <div id="content">
+      <div id="main">
+        <h2>What is the rationale?</h2>
+        Any software application is essentially action on data, movement and its persistence  
+        
+        <p>An application database is the most efficient way the day is stored, the relationship represents how the data could be acted upon and the number of attributes represents a quantitative representation of its magniture.  A relationship among these factors succinctly represent all that transformations and its extent that could happen on the represented abstraction.  A regression model built on the interelationships form the crux of this tool.</p>
+        
+         <h2>How to use this tool?</h2>
+         There are three parameters based on which an estimate is prepared:
+         
+          <h5>Number of Classes</h5>
+          
+          The number of classes or entities defined in a Conceptual Design Model (CDM).
+          
+          <h5>Number of Relationships</h5>
+        <p>The relationships are drawn as lines connecting entities in a CDM.  Each unidirectional relationship is counted once.  You will get just enough details from my paper on the subject <a href="https://www.researchgate.net/publication/281097572_A_Case_for_Database_Modeling_in_Enterprise_Software_Projects">here </a>.  So, if there are bi-directional relationships, they would need to be counted twice.</p>
+        
+        <h5>Average number of attributes</h5>
+ <p>This number is the average count of all attributes defined in the CDM:  total number of attributes in the conceptual model divided by the number of classes. </p>
+        <h2>Accuracy ?</h2>
+         <p>The tool uses a linear regression model for the estimate.  The LOC estimation model has an MMRE and Pred(0.25) values of 0.14 and 0.81, which are comaprable to the Function Point method.  The accuracy of the estimate is within 75% 81 percent of the time.</p>
+
+<h4>References</h4>
+      
+        <p>TAN, H. B. K. AND ZHAO, Y. 2004. ER-based software sizing for data-intensive systems. In Proceedings
+of the International Conference on Conceptual Modeling. 180-190.</p>
+<p>TAN, H. B. K. AND ZHAO, Y. 2006. Sizing data-intensive systems from ER model. In IEICE Trans.
+Inform. Syst. 89-D, 4, 1321-1326.</p>
+<p>TAN, H. B. K., ZHAO, Y., AND ZHANG, H. 2006. Estimating LOC for information systems from their
+conceptual data models. In Proceedings of the International Conference on Software Engineering.
+321-330.</p>
+<p>TEOREY, T. J., YANG, D., AND FRY, J. P. 1986. A logical design methodology for relational databases
+using the extended entity-relationship model. ACM Comput. Surv. 18, 2 (June), 197-222.</p>
+
+
+      </div>
+      <div id="shiny">
+        <iframe src="./ecdm/" style="border: 1px solid #AAA; width: 290px; height: 720px"></iframe>
+
+       
+      </div>
+    </div>
+     <div class="caption">
+        <a href="https://github.com/datapoesy">Datapoesy </a></br></br>
+    </div>
+    
+  </div>
+ 
+</body>
+</html>
